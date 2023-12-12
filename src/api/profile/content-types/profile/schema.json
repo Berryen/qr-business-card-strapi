@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "singularName": "profile",
+    "pluralName": "profiles",
+    "displayName": "Profile",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "domain": {
+      "type": "enumeration",
+      "enum": [
+        "ytlcement.com.my",
+        "ytlcement.my",
+        "ytlcement.com"
+      ],
+      "required": true
+    },
+    "jobTitle": {
+      "type": "string",
+      "required": true
+    },
+    "company": {
+      "type": "string",
+      "required": true,
+      "default": "YTL Cement Berhad"
+    },
+    "email": {
+      "type": "email"
+    },
+    "countryCode": {
+      "type": "enumeration",
+      "enum": [
+        "Malaysia",
+        "Singapore",
+        "Vietnam"
+      ],
+      "required": false
+    },
+    "mobileNumber": {
+      "type": "string"
+    },
+    "officeNumber": {
+      "type": "string"
+    },
+    "extensionNumber": {
+      "type": "biginteger"
+    },
+    "location": {
+      "type": "text"
+    }
+  }
+}
