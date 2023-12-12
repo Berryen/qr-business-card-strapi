@@ -16,17 +16,16 @@
       "type": "string",
       "required": true
     },
+    "about": {
+      "type": "text"
+    },
     "slug": {
       "type": "string",
       "required": true
     },
     "domain": {
       "type": "enumeration",
-      "enum": [
-        "ytlcement.com.my",
-        "ytlcement.my",
-        "ytlcement.com"
-      ],
+      "enum": ["ytlcement.com.my", "ytlcement.my", "ytlcement.com"],
       "required": true
     },
     "jobTitle": {
@@ -43,11 +42,7 @@
     },
     "countryCode": {
       "type": "enumeration",
-      "enum": [
-        "Malaysia",
-        "Singapore",
-        "Vietnam"
-      ],
+      "enum": ["Malaysia", "Singapore", "Vietnam"],
       "required": false
     },
     "mobileNumber": {
