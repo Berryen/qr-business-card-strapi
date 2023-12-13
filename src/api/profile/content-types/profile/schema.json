@@ -20,7 +20,9 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "slug": {
       "type": "string",
@@ -48,7 +50,11 @@
     },
     "countryCodeMobile": {
       "type": "enumeration",
-      "enum": ["Malaysia (60)", "Singapore (65)", "Vietnam (84)"],
+      "enum": [
+        "Malaysia (60)",
+        "Singapore (65)",
+        "Vietnam (84)"
+      ],
       "required": false
     },
     "mobileNumber": {
@@ -56,7 +62,11 @@
     },
     "countryCodeOffice": {
       "type": "enumeration",
-      "enum": ["Malaysia (60)", "Singapore (65)", "Vietnam (84)"]
+      "enum": [
+        "Malaysia (60)",
+        "Singapore (65)",
+        "Vietnam (84)"
+      ]
     },
     "officeNumber": {
       "type": "string"
@@ -68,7 +78,8 @@
       "type": "text"
     },
     "about": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 150
     }
   }
 }
