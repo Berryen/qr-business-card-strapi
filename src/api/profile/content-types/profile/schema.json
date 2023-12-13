@@ -16,8 +16,11 @@
       "type": "string",
       "required": true
     },
-    "about": {
-      "type": "text"
+    "profilePhoto": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
     },
     "slug": {
       "type": "string",
@@ -43,20 +46,17 @@
       "required": true,
       "default": "YTL Cement Berhad"
     },
-    "email": {
-      "type": "email"
-    },
     "countryCodeMobile": {
       "type": "enumeration",
-      "enum": [
-        "Malaysia (60)",
-        "Singapore (65)",
-        "Vietnam (84)"
-      ],
+      "enum": ["Malaysia (60)", "Singapore (65)", "Vietnam (84)"],
       "required": false
     },
     "mobileNumber": {
       "type": "string"
+    },
+    "countryCodeOffice": {
+      "type": "enumeration",
+      "enum": ["Malaysia (60)", "Singapore (65)", "Vietnam (84)"]
     },
     "officeNumber": {
       "type": "string"
@@ -67,21 +67,8 @@
     "location": {
       "type": "text"
     },
-    "countryCodeOffice": {
-      "type": "enumeration",
-      "enum": [
-        "Malaysia (60)",
-        "Singapore (65)",
-        "Vietnam (84)"
-      ]
-    },
-    "profilePhoto": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
+    "about": {
+      "type": "text"
     }
   }
 }
