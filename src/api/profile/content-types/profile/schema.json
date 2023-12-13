@@ -25,7 +25,13 @@
     },
     "domain": {
       "type": "enumeration",
-      "enum": ["ytlcement.com.my", "ytlcement.my", "ytlcement.com"],
+      "enum": [
+        "@ytlcement.com",
+        "@ytlcement.com.my",
+        "@ytlcement.com.sg",
+        "@fico-ytl.com",
+        "@ytlcement.com.mm"
+      ],
       "required": true
     },
     "jobTitle": {
@@ -40,9 +46,13 @@
     "email": {
       "type": "email"
     },
-    "countryCode": {
+    "countryCodeMobile": {
       "type": "enumeration",
-      "enum": ["Malaysia", "Singapore", "Vietnam"],
+      "enum": [
+        "Malaysia (60)",
+        "Singapore (65)",
+        "Vietnam (84)"
+      ],
       "required": false
     },
     "mobileNumber": {
@@ -56,6 +66,22 @@
     },
     "location": {
       "type": "text"
+    },
+    "countryCodeOffice": {
+      "type": "enumeration",
+      "enum": [
+        "Malaysia (60)",
+        "Singapore (65)",
+        "Vietnam (84)"
+      ]
+    },
+    "profilePhoto": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
