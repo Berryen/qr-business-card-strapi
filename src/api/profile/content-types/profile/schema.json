@@ -14,19 +14,26 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "profilePhoto": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "pluginOptions": {}
     },
     "slug": {
       "type": "string",
       "required": true
+    },
+    "emailId": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {}
     },
     "domain": {
       "type": "enumeration",
@@ -37,16 +44,19 @@
         "@fico-ytl.com",
         "@ytlcement.com.mm"
       ],
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "jobTitle": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "company": {
       "type": "string",
       "required": true,
-      "default": "YTL Cement Berhad"
+      "default": "YTL Cement Berhad",
+      "pluginOptions": {}
     },
     "countryCodeMobile": {
       "type": "enumeration",
@@ -55,10 +65,12 @@
         "Singapore (65)",
         "Vietnam (84)"
       ],
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     },
     "mobileNumber": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "countryCodeOffice": {
       "type": "enumeration",
@@ -66,20 +78,35 @@
         "Malaysia (60)",
         "Singapore (65)",
         "Vietnam (84)"
-      ]
+      ],
+      "pluginOptions": {}
     },
     "officeNumber": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "extensionNumber": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "pluginOptions": {}
+    },
+    "linkedIn": {
+      "type": "string",
+      "pluginOptions": {}
     },
     "location": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {},
+      "required": true
     },
     "about": {
       "type": "text",
-      "maxLength": 150
+      "maxLength": 150,
+      "pluginOptions": {}
+    },
+    "showWhatsapp": {
+      "pluginOptions": {},
+      "type": "boolean",
+      "default": true
     }
   }
 }

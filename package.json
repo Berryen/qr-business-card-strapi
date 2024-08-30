@@ -1,14 +1,21 @@
 {
   "dependencies": {
     "@strapi/plugin-graphql": "^4.0.5",
-    "@strapi/plugin-i18n": "4.13.6",
-    "@strapi/plugin-users-permissions": "4.13.6",
-    "@strapi/strapi": "4.13.6",
+    "@strapi/plugin-i18n": "4.14.4",
+    "@strapi/plugin-users-permissions": "4.14.4",
+    "@strapi/strapi": "4.14.4",
+    "aws-sdk": "^2.1530.0",
     "better-sqlite3": "8.5.0",
     "fs-extra": "^10.0.0",
     "git-cz": "^4.9.0",
     "lodash.set": "^4.3.2",
-    "mime-types": "^2.1.27"
+    "mime-types": "^2.1.27",
+    "pg": "^8.11.3",
+    "strapi-plugin-import-export-entries": "^1.23.1",
+    "strapi-plugin-populate-deep": "^3.0.1",
+    "strapi-plugin-publisher": "^1.5.6",
+    "strapi-plugin-sitemap": "^3.0.7",
+    "strapi-provider-upload-aws-s3-advanced": "^5.0.1"
   },
   "name": "my-app-name",
   "private": true,
@@ -20,7 +27,11 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "cz": "git-cz"
+    "cz": "git-cz",
+    "staging:encrypt": "sops --encrypt deployment/charts/ytl-backend-qr/secret.staging.yaml > deployment/charts/ytl-backend-qr/secrets/secret.enc.staging.yaml",
+    "production:encrypt": "sops --encrypt deployment/charts/ytl-backend-qr/secret.production.yaml > deployment/charts/ytl-backend-qr/secrets/secret.enc.production.yaml",
+    "staging:decrypt": "sops --decrypt deployment/charts/ytl-backend-qr/secrets/secret.enc.staging.yaml > deployment/charts/ytl-backend-qr/secret.staging.yaml",
+    "production:decrypt": "sops --decrypt deployment/charts/ytl-backend-qr/secrets/secret.enc.production.yaml > deployment/charts/ytl-backend-qr/secret.production.yaml"
   },
   "devDependencies": {},
   "author": {
@@ -33,5 +44,10 @@
     "node": ">=16.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "resolutions": {
+    "sharp": "0.32.0",
+    "@radix-ui/react-dismissable-layer": "^1.0.5",
+    "@radix-ui/react-dialog": "^1.0.5"
+  }
 }

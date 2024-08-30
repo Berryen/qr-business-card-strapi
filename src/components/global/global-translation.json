@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_global_global_translations",
+  "info": {
+    "displayName": "globalTranslation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "englishTranslation": {
+      "type": "json"
+    },
+    "bahasaMelayuTranslation": {
+      "type": "json"
+    },
+    "vietnameseTranslation": {
+      "type": "json"
+    }
+  }
+}
