@@ -32,4 +32,7 @@ module.exports = ({ env }) => ({
       excludedTypes: [],
     },
   },
+  "users-permissions": {
+    enabled: true,
+  },
 });
