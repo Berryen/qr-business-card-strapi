@@ -413,7 +413,7 @@ export interface ApiProfileProfile extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    profilePhoto: Attribute.Media;
+    profilePhoto: Attribute.Media & Attribute.Required;
     slug: Attribute.String & Attribute.Required;
     emailId: Attribute.String & Attribute.Required;
     domain: Attribute.Enumeration<
