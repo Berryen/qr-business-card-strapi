@@ -30,20 +30,8 @@
       "type": "string",
       "required": true
     },
-    "emailId": {
+    "email": {
       "type": "string",
-      "required": true,
-      "pluginOptions": {}
-    },
-    "domain": {
-      "type": "enumeration",
-      "enum": [
-        "@ytlcement.com",
-        "@ytlcement.com.my",
-        "@ytlcement.com.sg",
-        "@fico-ytl.com",
-        "@ytlcement.com.mm"
-      ],
       "required": true,
       "pluginOptions": {}
     },
@@ -107,6 +95,11 @@
       "pluginOptions": {},
       "type": "boolean",
       "default": true
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     }
   }
 }

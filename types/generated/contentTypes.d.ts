@@ -415,17 +415,7 @@ export interface ApiProfileProfile extends Schema.CollectionType {
     name: Attribute.String & Attribute.Required;
     profilePhoto: Attribute.Media & Attribute.Required;
     slug: Attribute.String & Attribute.Required;
-    emailId: Attribute.String & Attribute.Required;
-    domain: Attribute.Enumeration<
-      [
-        '@ytlcement.com',
-        '@ytlcement.com.my',
-        '@ytlcement.com.sg',
-        '@fico-ytl.com',
-        '@ytlcement.com.mm'
-      ]
-    > &
-      Attribute.Required;
+    email: Attribute.String & Attribute.Required;
     jobTitle: Attribute.String & Attribute.Required;
     company: Attribute.String &
       Attribute.Required &
@@ -446,6 +436,11 @@ export interface ApiProfileProfile extends Schema.CollectionType {
         maxLength: 150;
       }>;
     showWhatsapp: Attribute.Boolean & Attribute.DefaultTo<true>;
+    users_permissions_user: Attribute.Relation<
+      'api::profile.profile',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
