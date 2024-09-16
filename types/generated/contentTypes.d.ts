@@ -436,7 +436,7 @@ export interface ApiProfileProfile extends Schema.CollectionType {
         maxLength: 150;
       }>;
     showWhatsapp: Attribute.Boolean & Attribute.DefaultTo<true>;
-    users_permissions_user: Attribute.Relation<
+    users: Attribute.Relation<
       'api::profile.profile',
       'oneToOne',
       'plugin::users-permissions.user'
@@ -455,6 +455,50 @@ export interface ApiProfileProfile extends Schema.CollectionType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ApiTestTest extends Schema.CollectionType {
+  collectionName: 'tests';
+  info: {
+    singularName: 'test';
+    pluralName: 'tests';
+    displayName: 'Profile Card';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    profilePhoto: Attribute.Media & Attribute.Required;
+    slug: Attribute.String & Attribute.Required;
+    jobTitle: Attribute.String & Attribute.Required;
+    company: Attribute.String & Attribute.Required;
+    countryCodeMobile: Attribute.Enumeration<
+      ['Malaysia (60)', 'Singapore (65)', 'Vietnam (84)']
+    >;
+    mobileNumber: Attribute.String;
+    countryCodeOffice: Attribute.Enumeration<
+      ['Malaysia (60)', 'Singapore (65)', 'Vietnam (84)']
+    >;
+    officeNumber: Attribute.String;
+    extensionNumber: Attribute.BigInteger;
+    linkedIn: Attribute.String;
+    location: Attribute.Text;
+    about: Attribute.Text;
+    showWhatsapp: Attribute.Boolean & Attribute.DefaultTo<true>;
+    email: Attribute.Email & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
@@ -819,7 +863,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -847,6 +890,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'manyToOne',
       'plugin::users-permissions.role'
+    >;
+    profile: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToOne',
+      'api::profile.profile'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -924,6 +972,7 @@ declare module '@strapi/types' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::global.global': ApiGlobalGlobal;
       'api::profile.profile': ApiProfileProfile;
+      'api::test.test': ApiTestTest;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::publisher.action': PluginPublisherAction;

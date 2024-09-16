@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "profiles",
+  "collectionName": "tests",
   "info": {
-    "singularName": "profile",
-    "pluralName": "profiles",
-    "displayName": "Profile",
+    "singularName": "test",
+    "pluralName": "tests",
+    "displayName": "Profile Card",
     "description": ""
   },
   "options": {
@@ -14,8 +14,7 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true,
-      "pluginOptions": {}
+      "required": true
     },
     "profilePhoto": {
       "type": "media",
@@ -23,28 +22,19 @@
       "required": true,
       "allowedTypes": [
         "images"
-      ],
-      "pluginOptions": {}
+      ]
     },
     "slug": {
       "type": "string",
       "required": true
     },
-    "email": {
-      "type": "string",
-      "required": true,
-      "pluginOptions": {}
-    },
     "jobTitle": {
       "type": "string",
-      "required": true,
-      "pluginOptions": {}
+      "required": true
     },
     "company": {
       "type": "string",
-      "required": true,
-      "default": "YTL Cement Berhad",
-      "pluginOptions": {}
+      "required": true
     },
     "countryCodeMobile": {
       "type": "enumeration",
@@ -52,13 +42,10 @@
         "Malaysia (60)",
         "Singapore (65)",
         "Vietnam (84)"
-      ],
-      "required": false,
-      "pluginOptions": {}
+      ]
     },
     "mobileNumber": {
-      "type": "string",
-      "pluginOptions": {}
+      "type": "string"
     },
     "countryCodeOffice": {
       "type": "enumeration",
@@ -66,40 +53,30 @@
         "Malaysia (60)",
         "Singapore (65)",
         "Vietnam (84)"
-      ],
-      "pluginOptions": {}
+      ]
     },
     "officeNumber": {
-      "type": "string",
-      "pluginOptions": {}
+      "type": "string"
     },
     "extensionNumber": {
-      "type": "biginteger",
-      "pluginOptions": {}
+      "type": "biginteger"
     },
     "linkedIn": {
-      "type": "string",
-      "pluginOptions": {}
+      "type": "string"
     },
     "location": {
-      "type": "text",
-      "pluginOptions": {},
-      "required": true
+      "type": "text"
     },
     "about": {
-      "type": "text",
-      "maxLength": 150,
-      "pluginOptions": {}
+      "type": "text"
     },
     "showWhatsapp": {
-      "pluginOptions": {},
       "type": "boolean",
       "default": true
     },
-    "users": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
+    "email": {
+      "type": "email",
+      "required": true
     }
   }
 }
