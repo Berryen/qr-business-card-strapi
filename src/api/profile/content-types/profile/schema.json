@@ -104,6 +104,14 @@
     "showLinkedIn": {
       "type": "boolean",
       "default": true
+    },
+    "cv": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
     }
   }
 }

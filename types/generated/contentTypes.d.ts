@@ -442,6 +442,7 @@ export interface ApiProfileProfile extends Schema.CollectionType {
       'plugin::users-permissions.user'
     >;
     showLinkedIn: Attribute.Boolean & Attribute.DefaultTo<true>;
+    cv: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
