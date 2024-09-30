@@ -4,7 +4,7 @@ module.exports = ({ env }) => ({
     connection: {
       host: env("DB_HOST", "127.0.0.1"),
       port: env.int("DB_PORT", 5432),
-      database: env("DB_DATABASE", "ytl_db"),
+      database: env("DB_DATABASE"),
       user: env("DB_USERNAME", "postgres"),
       password: env("DB_PASSWORD", "postgres"),
       ssl: env("DB_SSL_CERT")
